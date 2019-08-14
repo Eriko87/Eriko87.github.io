@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/myPortfolio.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.0.0/jquery.inview.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inview/1.0.0/jquery.inview.min.js"></script>
+
+
+    <!-- programing language icons are from this link: https://icons8.com/icons/-->
+
+
+    <title>Hello! I am Eriko Dott</title>
+</head>
+
+<body>
+    <div class="start">
+        <div class="startcontainer">
+            <h1 class="starttitle title1">
+                <span>Hi, nice</span>
+                <span>to see</span>
+                <span>you</span>
+                <span>here</span>
+            </h1>
+
+            <h2 class="starttitle title2">
+                <span>I am Eriko</span>
+                <span>a Front-end</span>
+                <span>developer</span>
+            </h2>
+        </div>
+    </div>
+    <script>
+
+        //for startting page
+        $(function () {
+            setTimeout(function () {
+                $('.start').fadeOut(500);
+            }, 8000);
+        });
+
+        //for color change
+        $(function () {
+            var secArr = new Array();
+            var current = -1;
+            var secColor = new Array('rgb(255, 20, 147)', 'rgb(189, 20, 255)', 'rgb(227, 224, 43)', 'rgb(21, 198, 86)');
+            $('.colorchange').each(function (i) {
+                secArr[i] = $(this).offset().top;
+            });
+            function chengeBG(secNum) {
+                if (secNum != current) {
+                    current = secNum;
+                    $('.wrapper').css({ backgroundColor: secColor[current] });
+                    $('.title').css({ color: secColor[current] });
+                    if (current === 0) {
+                        $('#nav1').css({ color: "white" });
+                        $('#nav2').css({ color: "rgb(57,62,70)" });
+                        $('#nav3').css({ color: "rgb(57,62,70)" });
+                        $('#nav4').css({ color: "rgb(57,62,70)" });
+                    } else if (current === 1) {
+                        $('#nav1').css({ color: "rgb(57,62,70)" });
+                        $('#nav2').css({ color: "white" });
+                        $('#nav3').css({ color: "rgb(57,62,70)" });
+                        $('#nav4').css({ color: "rgb(57,62,70)" });
+                    } else if (current === 2) {
+                        $('#nav1').css({ color: "rgb(57,62,70)" });
+                        $('#nav2').css({ color: "rgb(57,62,70)" });
+                        $('#nav3').css({ color: "white" });
+                        $('#nav4').css({ color: "rgb(57,62,70)" });
+                    } else {
+                        $('#nav1').css({ color: "rgb(57,62,70)" });
+                        $('#nav2').css({ color: "rgb(57,62,70)" });
+                        $('#nav3').css({ color: "rgb(57,62,70)" });
+                        $('#nav4').css({ color: "white" });
+                    }
+                }
+            }
+            $(window).on('load scroll resize', function () {
+                for (var i = secArr.length - 1; i >= 0; i--) {
+                    if ($(window).scrollTop() > secArr[i]) {
+                        chengeBG(i);
+                        break;
+                    }
+                }
+            });
+        });
+        //for scrollins
+        $(function () {
+            $(window).scroll(function () {
+                $('.projectfadein').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight + 80) {
+                        $(this).addClass('scrollin');
+                    }
+                });
+            });
+        });
+
+        $(function () {
+            $(window).scroll(function () {
+                $('.timeline').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight + 80) {
+                        $(this).addClass('scrollin');
+                    }
+                });
+            });
+        });
+        $(function () {
+            $(window).scroll(function () {
+                $('.timeline-work').each(function () {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight + 80) {
+                        $(this).addClass('scrollin');
+                    }
+                });
+            });
+        });
+    </script>
+    <div id="main">
+        <div class="sidenav wrapper">
+            <ul>
+                <il><a id="nav1" href="#aboutme">ABOUT ME</a></il>
+                <il><a id="nav2" href="#skills">SKILLS</a></il>
+                <il><a id="nav3" href="#projects">PROJECTS</a></il>
+                <il><a id="nav4" href="#experience">EXPERIENCE</a></il>
+                <il>
+            </ul>
+        </div>
+        <div class="contactinfo wrapper">
+            <h3>Contact</h3>
+            <div class="phoneemail">
+                <div><i class="fas fa-envelope-square"></i><a
+                        href="mailto: eriko.dott@Gmail.com">Eriko.Dott@Gmail.com</a></div>
+                <div><i class="fas fa-mobile-alt"></i><a href="tel:512-947-7245">512-947-7245</a></div>
+            </div>
+            <div class="contactlogo">
+                <a href="https://www.linkedin.com/in/eriko-dott-0628299b/" target="_blank">
+                    <div><i class="fab fa-linkedin"></i></div>
+                </a>
+                <a href="https://www.freecodecamp.org/eriko_dottt" target="_blank">
+                    <div><i class="fab fa-free-code-camp"></i></div>
+                </a>
+                <a href="https://codepen.io/eriko87/" target="_blank">
+                    <div><i class="fab fa-codepen"></i></div>
+                </a>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class=colorchange></div>
+            <div id="aboutme" class="section">
+                <h1 class="title">ABOUT ME</h1>
+                <img id="img-aboutme"
+                    src="https://lh3.googleusercontent.com/kB6I7f693liZbAe9Mgn3cgj5Bw6G-W68SlimfJe8yEZWzdT8MtEH5NPtx4_6fNaJdjzJ9cBqZ1DLaqLrzBOI4jCkwXZSZCT6JIlqYU0Fhravsgf4i631N0pz-dJHzvnw9KPf4ZBk26Zoziyfu6A8129qKXcsoqXkP_JtIeGVmilrKZaqgH4tK2OE5qStFNAvnhKmrbO_aEt_RVUXIO4e9hxwUaoYbOEpKsx_Idk3Ua2NgjwtDoQQH443Li36RsyIH5YQIvVhgikv2PD_JtRVUaY-WjXecTwhl5oqQmyvhjOoCLKfUHHVRVswPnMeSKWMjtpKCBW4Z6wA-hSNs2HlkPOxfQGArBAzta-OgdH1hBxpdYgQVPJ2oyVyp0P7YK8QX9QZ3-S6Eu_pOWPhiMzNW_nnPgAerYAG2q3_2ysNywIyaHkb5c8F-khrleCItJdCUuVrA1gAc7Jy_lSu8DeshnP1IN_gWFK6ug4ASLHnn59TAJxJzEdlAfNKK71C7RWAPLIxYB6UJg-M-DqEaUUtoDcL2SQk7VLFxy8A_cNzHJTDADn1VgYhWeRB7qMkWGl2L0J0DfEnpOiEmHYiTt-1r5Nr4olVjb6Xk2JNm48jJW3thKMtOK-AwKxXmF3e8cPEVwlAKgr6AKRYcvs8NLcBrUJrO_aFj1ct=s200-no"
+                    alt="eriko portfolio pic">
+
+                <p>My name is Eriko Dott. I am a Front-End Web developer who is located in Portland, OR.
+                    I am an experienced professional with an eye for detail who is also great at time and task
+                    management.
+                    When I am not working, I enjoy rock climbing. I love spending time snuggling with my little kitty
+                    when it's rainy <i class="fas fa-cat"></i>.</p>
+            </div>
+            <div class=colorchange></div>
+            <div id="skills" class="section">
+                <h1 class="title">SKILLS</h1>
+                <h3 class="sectionsubtitle">Front-End</h3>
+                <div class="language">
+                    <div><img src="https://img.icons8.com/color/96/000000/html-5.png">
+                        <h3>HTML</h3>
+                    </div>
+                    <div><img src="https://img.icons8.com/color/96/000000/css3.png">
+                        <h3>CSS</h3>
+                    </div>
+                    <div><img src="https://img.icons8.com/color/96/000000/javascript.png">
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div><img src="https://img.icons8.com/color/96/000000/react-native.png">
+                        <h3>React</h3>
+                    </div>
+                </div>
+                <h3 class="sectionsubtitle">Back-End</h3>
+                <div class="language">
+                    <div><img src="https://img.icons8.com/color/96/000000/nodejs.png">
+                        <h3>Node.js</h3>
+                    </div>
+                    <div><img src="https://img.icons8.com/color/96/000000/python.png">
+                        <h3>Python</h3>
+                    </div>
+                </div>
+            </div>
+            <div class=colorchange></div>
+            <div id="projects" class="section">
+                <h1 class="title">PROJECTS</h1>
+                <div class="project-display ">
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/Hb8BBOivJkrMGznZ7bpbHDyhWd7XbyFnwDkKQSREWSwvh-ZzdjTKwVZw0Wonyzu3ybE3meq9J5ird6p82MiMYCmisWXkR35vQ4zp0kGCJyhNrliJPey8d75wJm9qZ09GWqaZUUz7OyBJp91n6AO1IS6FZUkGaBzAq5tw_B-ZpBDngUCu1FQiKq0MGN17kDLhkD_Hq33PHIMQqwGDZpBl47ijNEzlpQ_HWlvVllgVfPH4o45Jd2fLnFkWPJcNvAHLqcSGer6IPEfYTbz06Sqh2emKO-18khOR3GaKuHo5ATccRqDL2X3wUkIwe3baADhL0_ktMfnrEpza4fTE3biBJUkXfOSj9Hdtmd2FUEHsmttJrtYUWUF0_4zMivbEVKjTsJ3vACBX4_BPkE5vAuZjkfraEuyNMhI26V0mfqE4fmEIgPgc4MruL0yENOT6wCkoOtf97TFTjE3LuaVqdZ-i8eJYYOV84523zq6Y2t5JoroiOybP44afTQqgUadg_s7ZvpRaCSBGwzIN-JFJprKvYvxIe_ESPIQnI3X0MkJ43_6yHY_MOQ2C4GGhpSAjhW0WuFM8dfHDJTscQ5kwuS1eNDg9YK43gwzlEiean2DZ9jgHJS2hXFTRXgYYarC_C7UwffogxEmBDndVW7PBaCnia-IMd1EIWrc9=w1862-h886-no"
+                            alt="Anonymous Message Board">
+                        <div class="mask"><a href="https://anonymous-message-board-eriko.glitch.me/" target="_blank">
+                                <div class="caption">Anonymous Message Board</br></br>HTML, CSS, JavaScript, Node.js
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/08ytp96qXeAyEpqWhzB8zLZIMpSU4PPDSe4ZQfRVJ5FN-GdEyMLLu1SF_-2swPtmXsHFXVdEUh9Z900XBI8dDS3kmz1uJ6rxB1gKkQZDz5Bdpm3Lji1LlkZ44oJkN4J_UVkfFlGn5UnvpCYMCyJlYTCZlnXX9NtQgvp7f0goJIoHp9uRDcO9d9sv6464MCB2xRhKU1204s15p3NszOwq_xdW2njZ7IiBvLhYo_ivWissTJiDWTnLpxo0I74A7-yQjtWZXYxCTVCMQMPvN-GI77VxZbtr1MDstua2PGe_nE-KhnrRf_Ozda1D0cdLOdpkjNZyR98OVvcLoIDr3rStSt_hQXSnuGAOnl3K6VTxFtlLWYO4S0wiDmBE-_M-ySkvHycYZ-BymUPW___5VPP9SkDhlUjFcPfGPYrza-KHXu_ZTjupD7y8mvQ7qU4TOkZP0T5FK0yKAdQzAl0W7lmejStUWDipiVK7dOi_WoTmWH9laRPBBbXq6-414ZuMZ6mB-lsTEyDZPeFJ22CynahAhtjI9xFVkI_ADPPXUH_vFE2MiwwZ-NQsV34k3xxMOr3XDnozPRMp7GnCvZZGxbEjBDm8Sxl9syhnclBG0pyBqkkKYO5TKx5z-PumMptCKM8h6Djlx50f_BmzuczPpOQMLOFSWOqwcs3w=w1342-h818-no"
+                            alt="exercise_tracker">
+                        <div class="mask"><a href="https://exercise-tracker-eriko.glitch.me/" target="_blank">
+                                <div class="caption">Exercise Tracker</br></br>HTML, CSS, JavaScript, Node.js</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/wEGKHR0dLUrZzfrnrXXuRRV2fX59wyNxJftOOADbVnGjCYhUzoXOoVVliD1JC5CFFEw-55sh8nJP2AmbuFI3OAhgu948cHVhhHvTcROYosOpYpUXreyNVs_PFYSSCT6cUYDE9BjJOuIplQQTk0YZgwpqhyMD_5yvE6s8hVlx8Soz5E9WVN5GasYJiV6L5KQVAu9WVgdA4CWHq-y8FfaYj6bnTmF7rI5v7MHchX4hkb3SvKDzOzGg-7mePMCKAQH1oCV1Rlx20EmH-4hQFMVDr79t3Cwi9iaojPb_fOcin4o4t33CERU1L0tMaBVDTYEyqrtk3DwO8euV0RalqkDgO3uGAzXRMdVks3OQq_gfz9ABq8N2SNhh9nyV5B6Qtdf1mfUqvluXCxrznWo4kUq61ZsY5sP0X07-k7O-tj4XZsUFxAyau_4a4OMjYKUtOx4tC9c0AgzQpBSAarQGEMsBBYoegf2fWvwxHRkNXLYTlfE5ubxq5-4qoFdMwE2c8i8qCNDLBgFpQJc2xOGH4lBTCQaJzb6QJX9vzfuDscBpYiv7UA9RzbOKcY38nzVNK3QoMwrn200vzsAYY74WuGuJRezVRXL98mrBDUSR0U1Goj7Cgam_suZr7pz4Gs7Dgx-aykjjFVFgYfgIJrxOKRpIAwppoehDUCBX=w1249-h642-no"
+                            alt="urlshortner">
+                        <div class="mask">
+                            <a href="https://url-mall.glitch.me/" target="_blank">
+                                <div class="caption">URL Shortner</br></br>HTML, CSS, JavaScript, Node.js</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/2wQwKuTaf2tZdTrAE5oz0BSclHyYBK85ywpwzWsi_FVrrAUxopCIK4xAsdFDCQ1DDjyp5_rR_rxIUcbW0bN7SSBPA9sY4omS6aw6xeZ6sAG0ynREnWQRgOWzFc9DdK9RzoJdYYLXdY48JXgsLsPeDQNpmefRUcAjf5F2sDp7rZIrOnEzpRm6XKLGYH5x2r5FC8LP87CiGniNr5wicpr0pmhtIkPkrCFJ_IbH1P6Ku5mJUkHM1wM0joYaZTqIhqyQCGYNanT7PGhIepI0g5FmKmkjcwqja6OYTq12UUCO1wDKjBL5AZGwPriVbCPDO4K29XC9AKmivaPpcT-z6xGkDW28N_XtRVd-CtOicOBAvGer5PP2CBxcH_leJoUWmyl-Wom1297cFcm5wcZEoXiUSyWsLG2p80zEuaUSFLiw7ayAiP_kHQSs6cZLgvUKACfLbaIjzHfbaEbe92bb9aa8jYS_kDiXctZ3OCZEvh9GfLCovX8ZCUAsK4y3zcNUWd1cj1u3mCquWUdK-6qZxkWlmiHefPP7GFf0VZNcZOz8PTH2N5tayGospEVqnvMNv0O6_t_jGVcoAGTn70Sa7fWyHEA2mvR9rc2fOftnBRPHyykDYAeyL5zBw_UH7WjHxe3--uXsX9Y3dHy8xW0cUt6ComBJ-LC5qux3=w941-h599-no"
+                            alt="calclator">
+                        <div class="mask">
+                            <a href="https://codepen.io/eriko87/full/bPvLbN" target="_blank">
+                                <div class="caption">Calclator</br></br>HTML, CSS, JavaScript, React.js</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/8DAe_T5DQRUcf79sH0HjgwtGhNxQUl_CFiDZcr8smViij6MRungSpzoqyZKHdNQgYk6Xq2fJS3ov_vigyG8zlr9_0uCmbYjkFV_qzxaY_GZcuVylK-BJ_z4mnCfcOpiPS70hrBDLYtF7ylpqvRwhKDS0eNu66NAYGE0WdWUVeq40p3XTeYv3BOdaThHn7ltBi7-jHbtLaBD-nRfMbH13W4jOsr32vPqm6gGy4vM7ugwdHHtGlmEaOvbmhkZQGHfvL7VZnISzyDQa0KyrQyazqP4qK3AH0nmQGXBiuciJVEYiC2JUHgvcyfiv3rQkvTjdLD_GvWki6zgr5A6hsP7e4fkb9_ytMUAdSW8FnkdVU8q69x7rUOaMksJRmAzLEOu8wHoxSOflDqdVdorEQsEFBiMqf6bxt6ktnDhmWGsD8kmI9VL4PQ4CcjeckqfXezSDW6iq5susy-AZkop9ZfzWo3BbpnIs1ZmOPExQzc4id7ntH_n-STsKD5TYAQ8Ub7RLJJX1vf7itbLTGxekeTFnDjQO2aXFnxVxpLg_NpnZmicygVkiq5SOWXQa8U9o7EmO3ikz84YvKagtH4-Vfaw_GuEXSjy-DoZfUELyKFmoZDdEbupyc4afpcZekFvpauzdqXZmGks2BOi_SO6sx601T4o7Pi6j49Gd=w1068-h654-no"
+                            alt="drummachine">
+                        <div class="mask">
+                            <a href="https://codepen.io/eriko87/full/ewGQMg" target="_blank">
+                                <div class="caption">Drum Machine</br></br>HTML, CSS, JavaScript, React.js</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/IsfDWxrgPNmHu0a1jMOkJ2F1v2x8IwKdo-AkBDZmlfHHgtAGkS6sEBt3N6XQ4yvV_MLja--zw71I7GWZK1N1TyEiuxbrZdeeNDpGonIa49npWgExqsecOMO8JKXkqABJgqKoxy0QIF6UZQYqSvB0upxognAr8GYVHWDiPQS6EJ7UepNRS0lF7MSw9WerXs3aP7cTRc4Ye3SkfrmyNFV9HRRk0yq2NBuQbz0hDNxloneFeZuNm0XbRh64uZv9AB19aCwcOwtIcyiw8_tS0ZTHELL1TKYNvHjkVVXtyLijfWiX2-yop1xY23q79tUyohJ3NsR0GIkVlUbAxbH249kMS_FNhfCWg-NbJ1ATcWk7I8RWtxKKro3RnXZ9wc3v0ZUAknElMWZiWszgvHJvhx-6nDreStTAfUnWuzKjH-Ryk5MPeqOxuFhgAjn1b87OpB19Y-BFxFFu7cnBcxqwj_4T7u3cE2hV7HRgUeQohuVpG_EUrr1MP1NLEEXGoKrNeU9zvlAHyAGUkM87cNsVaYGQWkIjeK--WhRT4aOllxsEwz6KUeUas3ThRsUeG1t2mYIZeTYAcDN1yWUIPKU55FuDejTnsM8OGbKV_jKamNPMJRmu8Hhjru_a0qt7X4AF3CmWi1jv5KOuVtSTDsYAUJ1GWXtzxlsahsA8=w1512-h769-no"
+                            alt="catsiting">
+                        <div class="mask">
+                            <a href="https://codepen.io/eriko87/full/qGoQVJ" target="_blank">
+                                <div class="caption">Cat sitting site</br></br>HTML, CSS</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="projectfadein"><img class="project-img"
+                            src="https://lh3.googleusercontent.com/3HkKXTC-rztEwOTlDlfnKWQAK5pvl6ffyH0QYb1IS0ftEY5vYRsx45byQ5J_3YXMeWnvcIXmzZQbTZpjjMYQsRiKI9N33psnkvvnTO87vwMayeIfX3Gr6wE5r7ZHIVlXlvIFQzdEDhNpKitqna-M6bqDcuhUfI6uDr6UyG6jb00a_4JoBl9ga7pjJGR9QAfyfPvzk2G1-cXJlqnSduiOok5_JOvbL2t79oOdKJCt_98ykzok44OmC-SvZpQ2MI-bZSL46hYHQaFiXqIIgQvevdNNR_qHGYpQ38X_4OjkQJEKzVO_oNwGhccaSMCPu2jsNO15zXXh0Hb7xQwrkWn6TydlqNQOFcPSfzm0gEoaQscExPAEVto97nHRR5zJ7o5uusomIF5TJTz2cazDGZRS8pzLlY43oGHU3ZUvgdolqaEXAiNactemyNKeXQ2Q44kfPJ8Lt1UT_JJIrC3flIHetekbLX3dLPjUcODhMIKSrlBUY4jOn8JO1_AYYYzRdUY4A2pLoEPJj-HsF79X_vNfcdNBaXnEf8fqc7NVUcsGZndcw3Q0FbcDvtMOP6-Xb5uAJljSeSeGSvf54wmicNdhCI0YqLETJ-zf_l_Qw2C3LMMHxy7ipE-zQI_RkJSaSTf4a9pG2ANdEYVbwr71DertA03upbNWsMb5=w1289-h792-no"
+                            alt="D3Treemap">
+                        <div class="mask">
+                            <a href="https://codepen.io/eriko87/full/RzOyzY" target="_blank">
+                                <div class="caption">Movie Tree Map</br></br>HTML, CSS, JavaScript, D3</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class=colorchange></div>
+                    <div id="experience" class="section">
+                        <h1 class="title">EXPERIENCE</h1>
+                        <h3 class="sectionsubtitle">Programming</h3>
+                        <div class="timelineSummary">
+                            <p>Result driven front-end developer who is seeking a new career. Self-taught programming
+                                since May, 2019 by using FreeCodeCamp as main curriculum. Currently offering new
+                                websites to support local businesses and individuals.
+                            </p>
+                        </div>
+                        <div class="timelinecontainer">
+                            <div class="timeline freelance">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>Front-End Freelance jobs</h4>
+                                    <p class="carddiscription">Offering new websites
+                                        and maintenance to support local businesses and individuals</p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>Information Security and Quality Assurance Certification
+                                    </h4>
+                                    <p class="carddiscription">Obtained basic skills for Information Security with HelmetJS. - <i>Certified on August, 2019</i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>Apis And Microservices Certification</h4>
+                                    <p class="carddiscription">Obtained basic skills for npm. Created multiple projects with Node, Express, Mongoose and MongoDB. - <i>Certified on July, 2019</i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>Data Visualization Certification</h4>
+                                    <p class="carddiscription">Obtained basic skills for D3. Created multiple data
+                                        visualization webpages. - <i>Certified on July, 2019</i></p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle">Front End Libraries Certification</h4>
+                                    <p class="carddiscription">Obtained advanced skills for Front End Libraries such as
+                                        Bootstrap, Jquery, Sass, React and Redux. Created multiple projects using React.
+                                        - <i>Certified on July, 2019</i></p>
+                                </div>
+                            </div>
+                            <div class="timeline">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>JavaScript Algorithms and Data Structures Certification
+                                    </h4>
+                                    <p class="carddiscription">Obtained advanced skills for JavaScript including ES6.
+                                        Became familiar with Object Oriented Programming and Algorithms. - <i>Certified
+                                            on June, 2019</i></p>
+                                </div>
+                            </div>
+                            <div class="timeline timeline-last">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>Responsive Web Design Certification</h4>
+                                    <p class="carddiscription">Obtained principles, concepts, and advanced skills for
+                                        HTML and CSS, such as Flexbox and Grid. - <i>Certified on May, 2019</i></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="sectionsubtitle">Non-Programming</h3>
+                        <div class="timelineSummary">
+                            <p>A hard working team leader who has history of strengthening compliance, improving
+                                processes, and creating high quality output.
+                                Focused on customer satisfaction and bottom up teamwork to achieve goals.
+                            </p>
+                        </div>
+                        <div class="timelinecontainer">
+                            <div class="timeline legitscript">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle"></i>LegitScript </h4>
+                                    <p class="carddiscription">Lead entire Japanese team to ensure goals are met every
+                                        month.
+                                        Created and standardized new procedures to improve services and deliverables to
+                                        clients.</p>
+                                </div>
+                            </div>
+                            <div class="timeline bank">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle">MUFG Bank of Tokyo Mitsubishi</h4>
+                                    <p class="carddiscription">Interacted with corporate customers and internal teams in
+                                        a professional manner to facilitate processing of high volume bank documents in
+                                        timely manner.
+                                        Investigated and implemented new procedures as a project lead for onboarding
+                                        customers.</p>
+                                </div>
+                            </div>
+                            <div class="timeline nissin">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle">Nissin Ion Equipment</h4>
+                                    <p class="carddiscription">Oversaw parts control department and reported directly to
+                                        the president. Worked with field
+                                        service managers and customers to determine the needs of parts and urgently
+                                        provide service to customers.</p>
+                                </div>
+                            </div>
+                            <div class="timeline bank timeline-last">
+                                <div class="timelinecard">
+                                    <h4 class="cardtitle">MUFG Mitsubishi UFJ Trust and Banking Corporation</h4>
+                                    <p class="carddiscription">Completed high volume of transactions with fast and
+                                        accurate operation skills.
+                                        Improved basic business skills and time management. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="footer" class="section">
+                        <h3 class="sectionsubtitle">Let's work together!</h3>
+                        <div class="contactinfo2">
+                            <h3>Contact me!</h3>
+                            <div class="phoneemail2">
+                                <div><i class="fas fa-envelope-square"></i><a
+                                        href="mailto: eriko.dott@Gmail.com">Eriko.Dott@Gmail.com</a></div>
+                                <div><i class="fas fa-mobile-alt"></i></i><a href="tel:512-947-7245">512-947-7245</a>
+                                </div>
+                            </div>
+                            <div class="contactlogo2">
+                                <a href="https://www.linkedin.com/in/eriko-dott-0628299b/" target="_blank">
+                                    <div><i class="fab fa-linkedin"></i></div>
+                                </a>
+                                <a href="https://www.freecodecamp.org/eriko_dottt" target="_blank">
+                                    <div><i class="fab fa-free-code-camp"></i></div>
+                                </a>
+                                <a href="https://codepen.io/eriko87/" target="_blank">
+                                    <div><i class="fab fa-codepen"></i></div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+</html>
