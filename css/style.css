@@ -379,8 +379,12 @@ h2 span:last-child {
 
 /* for about me section */
 #img-aboutme {
-  border-radius: 100px;
-  width: 200px;
+  border-radius: 200px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+
+
 }
 
 #aboutme p {
@@ -672,6 +676,8 @@ h2 span:last-child {
   #img-aboutme {
     border-radius: 100px;
     width: 200px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .project-img {
@@ -794,6 +800,8 @@ h2 span:last-child {
   #img-aboutme {
     border-radius: 100px;
     width: 200px;
+    height: 200px;
+    object-fit: cover;
   }
 
   .language {
